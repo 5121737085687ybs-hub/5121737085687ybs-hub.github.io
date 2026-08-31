@@ -51,3 +51,10 @@ Command: Invoke-WebRequest https://5121737085687ybs-hub.github.io/ and https://5
 Literal output: site status=200; editor marker=present; app.js marker=present; content JSON status=200; projects=6
 Exit status: 0
 Restored behavior/status: MODIFIED_FILE remains the changed editable website; ROLLBACK.sh restores a separate copy to the original baseline hash.
+
+LIVE EDITOR CHECK
+-----------------
+Command: Browser open https://5121737085687ybs-hub.github.io/, click 编辑网站, click 作品
+Literal output: HTTP 200; title=搞钱实验室 - 独立设计师; dialog=1; tabs=4; projectEditors=6; imageUploadInputs=6; close=0; console errors=0
+Exit status: 0
+Result: the deployed page opens and exposes editable text plus per-project image upload controls; current saved content reloads from GitHub data/content.json.
