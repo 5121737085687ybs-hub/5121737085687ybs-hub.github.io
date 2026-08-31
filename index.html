@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="独立设计师个人作品集">
+  <title>个人作品集 - 独立设计师</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" data-bind="site.logo">LUMI.</a>
+    <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="打开导航" title="导航">
+      <i data-lucide="menu"></i>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="主导航">
+      <a href="#home">首页</a>
+      <a href="#works">作品集</a>
+      <a href="#about">关于我</a>
+      <a href="#contact">联系方式</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="eyebrow" data-bind="hero.eyebrow">INDEPENDENT DESIGNER</p>
+        <h1 data-bind="hero.title">你好，欢迎来到我的网站</h1>
+        <p class="hero-lede" data-bind="hero.subtitle">专注于用户体验与界面设计的高级设计师</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#works">查看作品 <i data-lucide="arrow-down-right"></i></a>
+          <a class="button button-secondary" href="#contact">联系我</a>
+        </div>
+      </div>
+      <div class="capability-grid" id="capability-grid"></div>
+      <div class="stat-strip" id="stat-strip"></div>
+    </section>
+
+    <section class="section works-section" id="works">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SELECTED WORK</p>
+          <h2>作品集</h2>
+        </div>
+        <div class="filters" id="filters" aria-label="作品分类"></div>
+      </div>
+      <div class="work-grid" id="work-grid"></div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-media">
+        <img id="about-image" alt="设计师肖像">
+        <span class="image-note">ABOUT / 01</span>
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">ABOUT ME</p>
+        <h2 data-bind="about.heading">专业背景</h2>
+        <p class="about-intro" data-bind="about.intro"></p>
+        <p data-bind="about.detail"></p>
+        <div class="skill-columns">
+          <div>
+            <h3>专业技能</h3>
+            <ul id="skills-list"></ul>
+          </div>
+          <div>
+            <h3>设计工具</h3>
+            <ul id="tools-list"></ul>
+          </div>
+        </div>
+        <a class="text-link" href="#contact">开始合作 <i data-lucide="arrow-up-right"></i></a>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-heading">
+        <p class="eyebrow">LET'S TALK</p>
+        <h2 data-bind="contact.heading">一起创造有价值的体验。</h2>
+      </div>
+      <div class="contact-list">
+        <a id="email-link" href="#"><span>邮箱</span><strong data-bind="contact.email"></strong><i data-lucide="arrow-up-right"></i></a>
+        <a id="phone-link" href="#"><span>电话</span><strong data-bind="contact.phone"></strong><i data-lucide="arrow-up-right"></i></a>
+        <div><span>地址</span><strong data-bind="contact.address"></strong><i data-lucide="map-pin"></i></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top" data-bind="site.logo">LUMI.</a>
+    <p data-bind="site.footer">专注于用户体验与界面设计的创意设计师</p>
+    <p class="copyright">© <span id="year"></span> <span data-bind="site.logo">LUMI.</span></p>
+  </footer>
+
+  <button class="edit-fab" id="edit-open" type="button" aria-label="编辑网站" title="编辑网站">
+    <i data-lucide="pencil-line"></i>
+  </button>
+
+  <div class="editor-shell" id="editor-shell" hidden>
+    <button class="editor-scrim" id="editor-scrim" type="button" aria-label="关闭编辑器"></button>
+    <aside class="editor-panel" role="dialog" aria-modal="true" aria-labelledby="editor-title">
+      <header class="editor-header">
+        <div>
+          <p class="eyebrow">CONTENT STUDIO</p>
+          <h2 id="editor-title">编辑网站</h2>
+        </div>
+        <button class="icon-button" id="edit-close" type="button" aria-label="关闭" title="关闭"><i data-lucide="x"></i></button>
+      </header>
+
+      <div class="editor-tabs" role="tablist" aria-label="编辑区域">
+        <button class="editor-tab is-active" type="button" data-tab="basic">首页</button>
+        <button class="editor-tab" type="button" data-tab="about">关于</button>
+        <button class="editor-tab" type="button" data-tab="works">作品</button>
+        <button class="editor-tab" type="button" data-tab="contact">联系</button>
+      </div>
+
+      <form class="editor-form" id="editor-form">
+        <section class="editor-section is-active" data-panel="basic">
+          <label>品牌名<input name="site.logo" autocomplete="off"></label>
+          <label>首页眉题<input name="hero.eyebrow" autocomplete="off"></label>
+          <label>首页标题<textarea name="hero.title" rows="2"></textarea></label>
+          <label>首页简介<textarea name="hero.subtitle" rows="2"></textarea></label>
+          <label>页脚简介<input name="site.footer" autocomplete="off"></label>
+          <fieldset>
+            <legend>数据展示</legend>
+            <div id="stats-editor"></div>
+          </fieldset>
+        </section>
+
+        <section class="editor-section" data-panel="about">
+          <label>标题<input name="about.heading" autocomplete="off"></label>
+          <label>简介<textarea name="about.intro" rows="3"></textarea></label>
+          <label>详细介绍<textarea name="about.detail" rows="5"></textarea></label>
+          <label>专业技能（每行一项）<textarea name="about.skills" rows="5"></textarea></label>
+          <label>设计工具（每行一项）<textarea name="about.tools" rows="5"></textarea></label>
+          <div class="image-field">
+            <img id="about-preview" alt="关于图片预览">
+            <label class="button button-secondary file-button">更换图片<input id="about-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif"></label>
+          </div>
+        </section>
+
+        <section class="editor-section" data-panel="works">
+          <div class="editor-section-toolbar">
+            <p>项目列表</p>
+            <button class="button button-secondary button-small" id="project-add" type="button"><i data-lucide="plus"></i> 新增项目</button>
+          </div>
+          <div id="projects-editor"></div>
+        </section>
+
+        <section class="editor-section" data-panel="contact">
+          <label>联系标题<textarea name="contact.heading" rows="2"></textarea></label>
+          <label>邮箱<input name="contact.email" type="email" autocomplete="email"></label>
+          <label>电话<input name="contact.phone" type="tel" autocomplete="tel"></label>
+          <label>地址<input name="contact.address" autocomplete="street-address"></label>
+        </section>
+      </form>
+
+      <div class="publish-box">
+        <label>GitHub 访问令牌
+          <div class="token-row">
+            <input id="github-token" type="password" placeholder="github_pat_... 或 ghp_..." autocomplete="off" spellcheck="false">
+            <button class="icon-button" id="token-toggle" type="button" aria-label="显示令牌" title="显示令牌"><i data-lucide="eye"></i></button>
+          </div>
+        </label>
+        <p class="publish-note">令牌仅保存在当前浏览器会话，用于提交到 GitHub。</p>
+        <div class="publish-actions">
+          <span class="save-status" id="save-status" role="status"></span>
+          <button class="button button-primary" id="save-button" type="button"><i data-lucide="cloud-upload"></i> 保存并发布</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

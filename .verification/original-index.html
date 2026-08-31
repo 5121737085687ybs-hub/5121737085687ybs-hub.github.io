@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人作品集 - 独立设计师</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#9F7AEA',
+secondary: '#90CDF4'
+},
+borderRadius: {
+'none': '0px',
+'sm': '2px',
+DEFAULT: '4px',
+'md': '8px',
+'lg': '12px',
+'xl': '16px',
+'2xl': '20px',
+'3xl': '24px',
+'full': '9999px',
+'button': '4px'
+}
+}
+}
+}
+</script>
+<style>
+body {
+min-height: 1024px;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #9F7AEA;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.filter-active {
+background-color: #9F7AEA;
+color: white;
+}
+</style>
+</head>
+<body class="bg-white">
+<nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+<div class="flex gap-8">
+<a href="#home" class="nav-link text-gray-600 hover:text-primary transition-colors">首页</a>
+<a href="#works" class="nav-link text-gray-600 hover:text-primary transition-colors">作品集</a>
+<a href="#about" class="nav-link text-gray-600 hover:text-primary transition-colors">关于我</a>
+<a href="#contact" class="nav-link text-gray-600 hover:text-primary transition-colors">联系方式</a>
+</div>
+</div>
+</nav>
+<section id="home" class="pt-32 min-h-screen bg-gradient-to-b from-primary/5 to-white">
+<div class="max-w-7xl mx-auto px-6 pt-20">
+<div class="flex flex-col items-center text-center mb-16">
+<h1 class="text-5xl font-bold mb-6">你好，欢迎来到我的网站</h1>
+<p class="text-xl text-gray-600 mb-8">专注于用户体验与界面设计的高级设计师</p>
+<div class="flex gap-4">
+<a href="#works" class="!rounded-button px-8 py-3 bg-primary text-white hover:bg-opacity-90 transition-colors whitespace-nowrap">查看作品</a>
+<a href="#contact" class="!rounded-button px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors whitespace-nowrap">联系我</a>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8 mb-16">
+<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="fas fa-laptop-code text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">6 年设计经验</h3>
+<p class="text-gray-600">深耕互联网产品设计领域，参与过多个大型项目的设计与交付</p>
+</div>
+<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="fas fa-lightbulb text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">创新思维</h3>
+<p class="text-gray-600">善于从用户需求出发，提供创新的设计解决方案</p>
+</div>
+<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="fas fa-users text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">优秀的沟通能力</h3>
+<p class="text-gray-600">能够高效与团队协作，确保项目顺利推进与交付</p>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-8">
+<div class="p-6 bg-white rounded-xl text-center">
+<div class="text-4xl font-bold text-primary mb-2">50+</div>
+<div class="text-gray-600">完成项目</div>
+</div>
+<div class="p-6 bg-white rounded-xl text-center">
+<div class="text-4xl font-bold text-primary mb-2">100%</div>
+<div class="text-gray-600">客户满意度</div>
+</div>
+<div class="p-6 bg-white rounded-xl text-center">
+<div class="text-4xl font-bold text-primary mb-2">10+</div>
+<div class="text-gray-600">行业经验</div>
+</div>
+<div class="p-6 bg-white rounded-xl text-center">
+<div class="text-4xl font-bold text-primary mb-2">20+</div>
+<div class="text-gray-600">获得奖项</div>
+</div>
+</div>
+</div>
+</section>
+<section id="works" class="pt-32">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-3xl font-bold text-center mb-16">作品集</h2>
+<div class="flex justify-center gap-4 mb-12">
+<button class="!rounded-button px-6 py-2 filter-active whitespace-nowrap">全部作品</button>
+<button class="!rounded-button px-6 py-2 border border-gray-200 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">UI/UX</button>
+<button class="!rounded-button px-6 py-2 border border-gray-200 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">品牌设计</button>
+<button class="!rounded-button px-6 py-2 border border-gray-200 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">插画设计</button>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=modern minimalist mobile app interface design with purple and blue color scheme, clean layout, professional UI design&width=400&height=300&orientation=landscape&flag=fce76353abadf3108be11a706df220a5" alt="作品1" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">智慧城市 App 设计</h3>
+<p class="text-gray-200 text-sm">基于用户研究的城市服务应用界面设计，提供便捷的城市生活服务体验。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=elegant brand identity design with minimalist logo and typography, purple and blue color palette, professional branding&width=400&height=300&orientation=landscape&flag=21e36ce5b64fe393ab0eb4c2db9d6f8b" alt="作品2" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">星光品牌设计</h3>
+<p class="text-gray-200 text-sm">新锐科技公司的品牌视觉识别系统设计，包含logo、配色、应用等完整方案。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=modern illustration design with geometric shapes and gradients, purple and blue theme, minimalist style&width=400&height=300&orientation=landscape&flag=8d1b31f171267d9aefb3c35e904f9c46" alt="作品3" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">插画设计系列</h3>
+<p class="text-gray-200 text-sm">以几何图形为基础的商业插画设计，用于产品包装和品牌推广。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=clean and modern dashboard interface design, data visualization, purple and blue theme, professional UI&width=400&height=300&orientation=landscape&flag=13dda12a9909c9613cc666603630a922" alt="作品4" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">数据可视化设计</h3>
+<p class="text-gray-200 text-sm">企业级数据分析平台的界面设计，让复杂数据更直观易懂。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=modern e-commerce website design, clean layout, purple and blue accents, professional UI design&width=400&height=300&orientation=landscape&flag=0cde088cb345d4343c82239763fad329" alt="作品5" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">电商平台设计</h3>
+<p class="text-gray-200 text-sm">面向年轻群体的时尚电商平台设计，注重视觉体验和购物流程优化。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=minimal and elegant social media app interface, purple and blue design elements, modern UI&width=400&height=300&orientation=landscape&flag=284fea9fc239e0de073e17d8e69a6dcd" alt="作品6" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">社交应用设计</h3>
+<p class="text-gray-200 text-sm">专注于年轻群体的社交应用界面设计，强调互动性和用户体验。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=modern website design for educational platform, purple and blue theme, clean interface&width=400&height=300&orientation=landscape&flag=41de0a775e508af70e28922db1659b68" alt="作品7" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">教育平台设计</h3>
+<p class="text-gray-200 text-sm">在线教育平台的整体界面设计，注重学习体验和交互设计。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=minimalist product landing page design, purple and blue gradient, modern layout&width=400&height=300&orientation=landscape&flag=cb3dfe740497eab5d9a7adb1de31cc0c" alt="作品8" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">产品落地页设计</h3>
+<p class="text-gray-200 text-sm">科技产品的营销落地页设计，突出产品特性和价值主张。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=modern healthcare app interface design, purple and blue color scheme, clean medical UI&width=400&height=300&orientation=landscape&flag=e53d4b777c77bdac17cede504b802714" alt="作品9" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">医疗应用设计</h3>
+<p class="text-gray-200 text-sm">面向患者的医疗服务应用设计，注重易用性和信息展示。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="py-32 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-3xl font-bold text-center mb-16">关于我</h2>
+<div class="flex gap-16 items-center">
+<div class="w-1/3">
+<img src="https://mastergo.com/ai/api/search-image?query=confident young asian female designer in modern office environment, professional headshot, natural lighting, soft purple background&width=400&height=600&orientation=portrait&flag=3e7cd1b09824770d338403a9c1d21f4f" alt="关于我" class="w-full rounded-2xl shadow-lg">
+</div>
+<div class="w-2/3">
+<h3 class="text-2xl font-bold mb-6">专业背景</h3>
+<p class="text-gray-600 mb-8 leading-relaxed">
+毕业于中国美术学院视觉传达设计专业，拥有 6 年用户界面设计经验。曾在多家知名互联网公司担任高级设计师职位，参与过电商、社交、教育等多个领域的产品设计工作。
+</p>
+<div class="grid grid-cols-2 gap-8 mb-8">
+<div>
+<h4 class="font-bold mb-4">专业技能</h4>
+<ul class="space-y-2 text-gray-600">
+<li>• UI/UX 设计</li>
+<li>• 品牌视觉设计</li>
+<li>• 交互原型设计</li>
+<li>• 用户研究</li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">设计工具</h4>
+<ul class="space-y-2 text-gray-600">
+<li>• Figma</li>
+<li>• Adobe Creative Suite</li>
+<li>• Sketch</li>
+<li>• Principle</li>
+</ul>
+</div>
+</div>
+<div class="flex gap-4">
+<a href="#" class="!rounded-button flex items-center gap-2 px-6 py-3 bg-primary text-white hover:bg-opacity-90 transition-colors whitespace-nowrap">
+<i class="fas fa-download"></i>
+下载简历
+</a>
+<a href="#contact" class="!rounded-button flex items-center gap-2 px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+<i class="fas fa-envelope"></i>
+联系我
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="works" class="py-32">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-3xl font-bold text-center mb-16">作品集</h2>
+<div class="flex justify-center gap-4 mb-12">
+<button class="!rounded-button px-6 py-2 filter-active whitespace-nowrap">全部作品</button>
+<button class="!rounded-button px-6 py-2 border border-gray-200 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">UI/UX</button>
+<button class="!rounded-button px-6 py-2 border border-gray-200 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">品牌设计</button>
+<button class="!rounded-button px-6 py-2 border border-gray-200 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">插画设计</button>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=modern minimalist mobile app interface design with purple and blue color scheme, clean layout, professional UI design&width=400&height=300&orientation=landscape&flag=fce76353abadf3108be11a706df220a5" alt="作品1" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">智慧城市 App 设计</h3>
+<p class="text-gray-200 text-sm">基于用户研究的城市服务应用界面设计，提供便捷的城市生活服务体验。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=elegant brand identity design with minimalist logo and typography, purple and blue color palette, professional branding&width=400&height=300&orientation=landscape&flag=21e36ce5b64fe393ab0eb4c2db9d6f8b" alt="作品2" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">星光品牌设计</h3>
+<p class="text-gray-200 text-sm">新锐科技公司的品牌视觉识别系统设计，包含logo、配色、应用等完整方案。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=modern illustration design with geometric shapes and gradients, purple and blue theme, minimalist style&width=400&height=300&orientation=landscape&flag=8d1b31f171267d9aefb3c35e904f9c46" alt="作品3" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">插画设计系列</h3>
+<p class="text-gray-200 text-sm">以几何图形为基础的商业插画设计，用于产品包装和品牌推广。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=clean and modern dashboard interface design, data visualization, purple and blue theme, professional UI&width=400&height=300&orientation=landscape&flag=13dda12a9909c9613cc666603630a922" alt="作品4" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">数据可视化设计</h3>
+<p class="text-gray-200 text-sm">企业级数据分析平台的界面设计，让复杂数据更直观易懂。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=modern e-commerce website design, clean layout, purple and blue accents, professional UI design&width=400&height=300&orientation=landscape&flag=0cde088cb345d4343c82239763fad329" alt="作品5" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">电商平台设计</h3>
+<p class="text-gray-200 text-sm">面向年轻群体的时尚电商平台设计，注重视觉体验和购物流程优化。</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img src="https://mastergo.com/ai/api/search-image?query=minimal and elegant social media app interface, purple and blue design elements, modern UI&width=400&height=300&orientation=landscape&flag=284fea9fc239e0de073e17d8e69a6dcd" alt="作品6" class="w-full transition-transform group-hover:scale-105">
+<div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+<h3 class="text-white text-xl font-bold mb-2">社交应用设计</h3>
+<p class="text-gray-200 text-sm">专注于年轻群体的社交应用界面设计，强调互动性和用户体验。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-32 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-3xl font-bold text-center mb-16">联系我</h2>
+<div class="grid grid-cols-2 gap-16">
+<div>
+<h3 class="text-2xl font-bold mb-6">联系方式</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<i class="fas fa-envelope text-primary"></i>
+</div>
+<div>
+<div class="text-sm text-gray-500">邮箱</div>
+<div class="text-gray-700">design.contact@gmail.com</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<i class="fas fa-phone text-primary"></i>
+</div>
+<div>
+<div class="text-sm text-gray-500">电话</div>
+<div class="text-gray-700">+86 138 8888 8888</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<i class="fas fa-map-marker-alt text-primary"></i>
+</div>
+<div>
+<div class="text-sm text-gray-500">地址</div>
+<div class="text-gray-700">浙江省杭州市西湖区文三路</div>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<h4 class="font-bold mb-4">社交媒体</h4>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="fab fa-weixin"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="fab fa-behance"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="fab fa-dribbble"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="fab fa-linkedin-in"></i>
+</a>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-6">发送消息</h3>
+<form class="space-y-6">
+<div>
+<label class="block text-sm text-gray-600 mb-2">姓名</label>
+<input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="请输入您的姓名">
+</div>
+<div>
+<label class="block text-sm text-gray-600 mb-2">邮箱</label>
+<input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="请输入您的邮箱">
+</div>
+<div>
+<label class="block text-sm text-gray-600 mb-2">主题</label>
+<input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="请输入消息主题">
+</div>
+<div>
+<label class="block text-sm text-gray-600 mb-2">消息内容</label>
+<textarea class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors h-32 resize-none" placeholder="请输入您的消息内容"></textarea>
+</div>
+<button type="submit" class="!rounded-button w-full py-3 bg-primary text-white hover:bg-opacity-90 transition-colors whitespace-nowrap">发送消息</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-gray-400 py-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-center">
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white">logo</a>
+<p class="mt-4">专注于用户体验与界面设计的创意设计师</p>
+</div>
+<div class="flex gap-8">
+<a href="#home" class="hover:text-white transition-colors">首页</a>
+<a href="#about" class="hover:text-white transition-colors">关于我</a>
+<a href="#works" class="hover:text-white transition-colors">作品集</a>
+<a href="#contact" class="hover:text-white transition-colors">联系方式</a>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex justify-between items-center">
+<div>© 2024 All rights reserved.</div>
+<button id="backToTop" class="!rounded-button w-10 h-10 bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-colors whitespace-nowrap">
+<i class="fas fa-arrow-up"></i>
+</button>
+</div>
+</div>
+</footer>
+<script>
+document.getElementById('backToTop').addEventListener('click', function() {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+const filterButtons = document.querySelectorAll('#works button');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+this.classList.add('filter-active');
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+const observerOptions = {
+threshold: 0.3
+};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+navLinks.forEach(link => {
+if (link.getAttribute('href').substring(1) === entry.target.id) {
+link.classList.add('text-primary');
+link.classList.remove('text-gray-600');
+} else {
+link.classList.remove('text-primary');
+link.classList.add('text-gray-600');
+}
+});
+}
+});
+}, observerOptions);
+sections.forEach(section => observer.observe(section));
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+document.querySelector(targetId).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
+});
+</script>
+</body>
+</html>

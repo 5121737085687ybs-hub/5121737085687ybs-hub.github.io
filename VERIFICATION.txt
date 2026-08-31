@@ -1,0 +1,40 @@
+Verification record
+===================
+Changed branch/fields
+---------------------
+Branch: main
+Fields: public portfolio layout; data/content.json content model; app.js GitHub Contents API editor; styles.css responsive/editor UI
+
+Artifacts
+---------
+MODIFIED_FILE: .verification/MODIFIED_FILE
+DIFF_FILE: .verification/DIFF_FILE
+VERIFICATION.txt: VERIFICATION.txt
+ROLLBACK.sh: ROLLBACK.sh
+
+BASELINE
+--------
+Command: node tests/site-contract.mjs "C:\Users\zerui\baiwu-reference" baseline
+Literal output: BASELINE PASS: original static portfolio rendered; duplicate works sections=2; web editor=absent
+Exit status: 0
+
+MODIFIED
+--------
+Command: node tests/site-contract.mjs "." modified
+Literal output: MODIFIED PASS: unique HTML ids=33; projects=6; text editor=present; image upload=present; GitHub persistence=data/content.json+assets/uploads; embedded token=absent
+Exit status: 0
+
+ROLLBACK
+--------
+Command: bash ./ROLLBACK.sh ".verification/rollback-copy"
+Literal output: ROLLBACK PASS: index.html restored to original static portfolio; web editor=absent
+Exit status: 0
+Command: node tests/site-contract.mjs ".verification/rollback-copy" baseline
+Literal output: BASELINE PASS: original static portfolio rendered; duplicate works sections=2; web editor=absent
+Exit status: 0
+Restored behavior/status: rollback-copy/index.html SHA256 matched .verification/original-index.html SHA256 D61AAD1ABF11F584CCEEF8B9CE0B527C3967DD50F928113A5DE2BB78E1BC3240.
+
+Browser checks
+--------------
+Desktop: rendered title "LUMI. - 独立设计师", 6 project cards, editor dialog opened, no console errors.
+Mobile 390x844: body scroll width 392px, editor entry visible, 6 project cards, no console errors.
