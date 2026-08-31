@@ -38,3 +38,16 @@ Browser checks
 --------------
 Desktop: rendered title "LUMI. - 独立设计师", 6 project cards, editor dialog opened, no console errors.
 Mobile 390x844: body scroll width 392px, editor entry visible, 6 project cards, no console errors.
+
+DEPLOYMENT
+----------
+Command: git push "https://x-access-token:<provided-token>@github.com/5121737085687ybs-hub/5121737085687ybs-hub.github.io.git" main
+Literal output: To https://github.com/5121737085687ybs-hub/5121737085687ybs-hub.github.io.git; [new branch] main -> main
+Exit status: 0
+Command: GitHub Pages API GET /repos/5121737085687ybs-hub/5121737085687ybs-hub.github.io/pages
+Literal output: status=built; html_url=https://5121737085687ybs-hub.github.io/; source.branch=main; source.path=/
+Exit status: 0
+Command: Invoke-WebRequest https://5121737085687ybs-hub.github.io/ and https://5121737085687ybs-hub.github.io/data/content.json
+Literal output: site status=200; editor marker=present; app.js marker=present; content JSON status=200; projects=6
+Exit status: 0
+Restored behavior/status: MODIFIED_FILE remains the changed editable website; ROLLBACK.sh restores a separate copy to the original baseline hash.
