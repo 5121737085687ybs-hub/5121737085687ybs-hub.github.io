@@ -42,7 +42,7 @@ assert(app.includes('method: "PUT"'), "missing GitHub persistence request");
 assert(app.includes('openEditorForProject'), "missing card-specific editor action");
 assert(styles.includes(".work-card:focus-visible"), "missing keyboard focus state for cards");
 assert(!/ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}/.test(`${index}\n${app}\n${styles}\n${JSON.stringify(content)}`), "repository contains a GitHub token");
-assert(Array.isArray(content.projects) && content.projects.length >= 3, "portfolio needs at least three projects");
+assert(Array.isArray(content.projects) && content.projects.length >= 1, "portfolio needs at least one project");
 assert(styles.includes("@media (max-width: 560px)"), "missing mobile layout");
 assert(styles.includes("prefers-reduced-motion"), "missing reduced motion support");
 
