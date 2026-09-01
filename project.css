@@ -15,13 +15,23 @@
 .project-summary { max-width: 480px; margin: 0 0 34px; color: var(--muted); font-size: 1.12rem; }
 .project-detail-image { position: relative; margin: 0; }
 .project-detail-image::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; background: var(--accent); opacity: .33; z-index: 0; }
-.project-detail-image img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--surface); }
+.project-detail-image img, .project-detail-image video { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--surface); }
+.project-detail-image video { display: block; }
 .project-story { padding: 120px max(24px, calc((100vw - var(--max-width)) / 2)); display: grid; grid-template-columns: 1fr 2fr; gap: 10%; }
 .project-story-label { display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
 .project-story-label span:last-child { color: var(--primary); }
 .project-story-copy { max-width: 720px; }
 .project-story-copy h2 { margin: 0 0 28px; font-size: clamp(2.1rem, 4.6vw, 4.5rem); line-height: 1.1; }
 .project-story-copy > p:last-child { margin: 0; color: var(--muted); font-size: 1.02rem; white-space: pre-line; }
+.project-gallery-section { padding: 0 max(24px, calc((100vw - var(--max-width)) / 2)) 120px; }
+.project-gallery-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.project-gallery-heading .eyebrow { margin: 0; }
+.project-gallery-heading > p:last-child { margin: 0; color: var(--muted); font-size: .82rem; }
+.project-gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; padding-top: 24px; }
+.project-gallery-item { grid-column: span 6; margin: 0; background: var(--surface); }
+.project-gallery-item:nth-child(3n) { grid-column: span 12; }
+.project-gallery-item img, .project-gallery-item video { display: block; width: 100%; max-height: 700px; aspect-ratio: 4 / 3; object-fit: cover; background: #eceaf0; }
+.project-gallery-item figcaption { padding: 12px 14px; color: var(--muted); font-size: .78rem; }
 .project-pager { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
 .project-pager a { min-height: 145px; padding: 26px max(24px, calc((100vw - var(--max-width)) / 2)); display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; color: var(--ink); }
 .project-pager a + a { justify-content: end; text-align: right; border-left: 1px solid var(--line); }
@@ -37,8 +47,19 @@
 .detail-editor-form label, .detail-publish-box > label { display: block; margin-bottom: 18px; color: #4f4b56; font-size: .78rem; font-weight: 600; }
 .detail-editor-form input, .detail-editor-form textarea, .detail-publish-box input { width: 100%; margin-top: 7px; padding: 10px 12px; border: 1px solid #dcd8e2; border-radius: 4px; outline: 0; background: white; color: var(--ink); font-size: .9rem; font-weight: 400; resize: vertical; }
 .detail-editor-form input:focus, .detail-editor-form textarea:focus, .detail-publish-box input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(128,90,213,.1); }
-.detail-image-field { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: end; }
-.detail-image-field img { width: 150px; height: 112px; object-fit: cover; background: #eee; }
+.detail-media-editor { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
+.detail-media-editor-header { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 14px; }
+.detail-media-editor-header strong { display: block; font-size: .85rem; }
+.detail-media-editor-header span { display: block; margin-top: 2px; color: var(--muted); font-size: .72rem; font-weight: 400; }
+.detail-media-list { display: grid; gap: 10px; }
+.detail-media-item { display: grid; grid-template-columns: 92px 1fr auto; gap: 12px; align-items: center; padding: 9px; border: 1px solid var(--line); background: white; }
+.detail-media-item img, .detail-media-item video { width: 92px; height: 68px; object-fit: cover; background: #eee; }
+.detail-media-item-info { min-width: 0; }
+.detail-media-item-info strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .8rem; }
+.detail-media-item-info span { color: var(--muted); font-size: .7rem; }
+.detail-media-item .icon-button { width: 34px; height: 34px; }
+.detail-media-item.is-pending { border-color: var(--primary); }
+.detail-media-empty { padding: 18px; border: 1px dashed #cfcbd7; color: var(--muted); text-align: center; font-size: .78rem; }
 .detail-publish-box { padding: 18px 26px 22px; border-top: 1px solid var(--line); background: white; }
 .detail-publish-box > label { margin: 0; }
 .detail-publish-actions { min-height: 44px; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
@@ -49,6 +70,7 @@
   .project-detail-copy { max-width: 680px; }
   .project-detail-image { max-width: 680px; }
   .project-story { padding-top: 88px; padding-bottom: 88px; grid-template-columns: 1fr; gap: 38px; }
+  .project-gallery-section { padding-bottom: 88px; }
   .project-pager a { padding-left: 18px; padding-right: 18px; }
 }
 @media (max-width: 560px) {
@@ -59,7 +81,11 @@
   .project-pager { grid-template-columns: 1fr; }
   .project-pager a { min-height: 105px; }
   .project-pager a + a { border-top: 1px solid var(--line); border-left: 0; justify-content: start; text-align: left; }
+  .project-gallery-section { padding-left: 18px; padding-right: 18px; }
+  .project-gallery { gap: 14px; }
+  .project-gallery-item, .project-gallery-item:nth-child(3n) { grid-column: 1 / -1; }
   .detail-editor-form, .detail-publish-box { padding-left: 18px; padding-right: 18px; }
+  .detail-media-editor-header { align-items: stretch; flex-direction: column; }
   .detail-publish-actions { align-items: stretch; flex-direction: column; }
   .detail-publish-actions .button { width: 100%; }
   .detail-editor-panel { right: 12px; bottom: 12px; width: calc(100% - 24px); max-height: calc(100vh - 24px); }

@@ -86,3 +86,10 @@ Command: Browser open project.html?project=0, click 编辑此项目, inspect pan
 Literal output: desktop right=24px bottom=24px width=560px; mobile right=12px bottom=12px width=366px; console errors=0
 Exit status: 0
 Result: the project subpage editor is a floating bottom-right panel instead of a full-height right drawer.
+
+MULTI-MEDIA CHECK
+-----------------
+Command: Browser open project.html?project=0, click the bottom-right pencil, select two local PNG files through #detail-image-input
+Literal output: pencil right=22px bottom=22px width=50px height=50px; multiple=true; accept includes video/mp4,video/webm,video/ogg; mediaListCount=1; mediaListCountAfterBatch=3; pending=2; console errors=0
+Exit status: 0
+Result: the subpage editor accepts multiple images in one selection, keeps them as separate pending media items, and supports video MIME types for upload and playback.

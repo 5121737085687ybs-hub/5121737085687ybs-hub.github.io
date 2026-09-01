@@ -29,10 +29,9 @@
         <p class="project-number" id="project-number">PROJECT / 01</p>
         <h1 id="project-title"></h1>
         <p class="project-summary" id="project-description"></p>
-        <button class="button button-primary" id="project-edit" type="button"><i data-lucide="pencil-line"></i> 编辑此项目</button>
       </div>
       <figure class="project-detail-image">
-        <img id="project-image" alt="">
+        <div id="project-hero-media"></div>
       </figure>
     </section>
 
@@ -48,11 +47,23 @@
       </div>
     </section>
 
+    <section class="project-gallery-section" id="project-gallery-section" hidden>
+      <div class="project-gallery-heading">
+        <p class="eyebrow">PROJECT MEDIA</p>
+        <p>图片与视频记录</p>
+      </div>
+      <div class="project-gallery" id="project-gallery"></div>
+    </section>
+
     <nav class="project-pager" aria-label="作品翻页">
       <a id="previous-project" href="#" hidden><span>上一个项目</span><strong></strong><i data-lucide="arrow-left"></i></a>
       <a id="next-project" href="#" hidden><span>下一个项目</span><strong></strong><i data-lucide="arrow-right"></i></a>
     </nav>
   </main>
+
+  <button class="edit-fab project-edit-fab" id="project-edit" type="button" aria-label="编辑此项目" title="编辑此项目" hidden>
+    <i data-lucide="pencil-line"></i>
+  </button>
 
   <div class="project-error" id="project-error" hidden>
     <p class="eyebrow">404 / PROJECT</p>
@@ -75,9 +86,12 @@
         <label>分类<input id="detail-category-input" required autocomplete="off"></label>
         <label>卡片简介<textarea id="detail-description-input" rows="3" required></textarea></label>
         <label>子页面正文<textarea id="detail-body-input" rows="8" placeholder="写下这个项目的背景、过程和结果"></textarea></label>
-        <div class="detail-image-field">
-          <img id="detail-image-preview" alt="项目图片预览">
-          <label class="button button-secondary file-button">更换项目图片<input id="detail-image-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif"></label>
+        <div class="detail-media-editor">
+          <div class="detail-media-editor-header">
+            <div><strong>项目媒体</strong><span>可添加多张图片或视频</span></div>
+            <label class="button button-secondary button-small file-button"><i data-lucide="plus"></i> 添加媒体<input id="detail-image-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/ogg" multiple></label>
+          </div>
+          <div id="detail-media-list"></div>
         </div>
       </form>
       <div class="detail-publish-box">
