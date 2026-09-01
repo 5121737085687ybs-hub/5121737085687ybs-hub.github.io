@@ -47,6 +47,7 @@ assert(read("project.js").includes("putFile"), "project detail page missing pers
 assert(read("project.html").includes('id="detail-editor"'), "project detail page missing editor panel");
 assert(read("project.html").includes('id="detail-body-input"'), "project detail page missing editable body");
 assert(read("project.html").includes('id="detail-image-input"'), "project detail page missing image input");
+assert(read("project.css").includes("right: 24px; bottom: 24px"), "project editor must be anchored bottom-right");
 assert(styles.includes(".work-card:focus-visible"), "missing keyboard focus state for cards");
 assert(!/ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}/.test(`${index}\n${app}\n${styles}\n${JSON.stringify(content)}`), "repository contains a GitHub token");
 assert(Array.isArray(content.projects) && content.projects.length >= 1, "portfolio needs at least one project");

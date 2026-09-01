@@ -79,3 +79,10 @@ Command: Browser open http://127.0.0.1:4173/, click the first work-grid card, cl
 Literal output: url=/project.html?project=0; detailTitle=新项目; dialog=1; titleInput=1; bodyInput=1; imageInput=1; save=1; console errors=0
 Exit status: 0
 Result: each portfolio card enters a dedicated project subpage; the subpage edits only that project's title, category, card description, page body, and image.
+
+BOTTOM-RIGHT EDITOR CHECK
+-------------------------
+Command: Browser open project.html?project=0, click 编辑此项目, inspect panel geometry at desktop and 390x844 viewport
+Literal output: desktop right=24px bottom=24px width=560px; mobile right=12px bottom=12px width=366px; console errors=0
+Exit status: 0
+Result: the project subpage editor is a floating bottom-right panel instead of a full-height right drawer.
