@@ -33,11 +33,14 @@ const ids = [...index.matchAll(/\sid=["']([^"']+)["']/g)].map(match => match[1])
 
 assert(new Set(ids).size === ids.length, "HTML IDs must be unique");
 assert(index.includes('id="edit-open"'), "missing web editor entry point");
+assert(index.includes('id="work-grid"'), "missing work grid");
 assert(index.includes('id="about-file"'), "missing about image upload");
 assert(app.includes("data-project-file"), "missing project image upload");
 assert(app.includes('contentPath: "data/content.json"'), "wrong GitHub content branch");
 assert(app.includes('assets/uploads/'), "missing GitHub image upload branch");
 assert(app.includes('method: "PUT"'), "missing GitHub persistence request");
+assert(app.includes('openEditorForProject'), "missing card-specific editor action");
+assert(styles.includes(".work-card:focus-visible"), "missing keyboard focus state for cards");
 assert(!/ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}/.test(`${index}\n${app}\n${styles}\n${JSON.stringify(content)}`), "repository contains a GitHub token");
 assert(Array.isArray(content.projects) && content.projects.length >= 3, "portfolio needs at least three projects");
 assert(styles.includes("@media (max-width: 560px)"), "missing mobile layout");

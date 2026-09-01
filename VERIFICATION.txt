@@ -58,3 +58,10 @@ Command: Browser open https://5121737085687ybs-hub.github.io/, click 编辑网�
 Literal output: HTTP 200; title=搞钱实验室 - 独立设计师; dialog=1; tabs=4; projectEditors=6; imageUploadInputs=6; close=0; console errors=0
 Exit status: 0
 Result: the deployed page opens and exposes editable text plus per-project image upload controls; current saved content reloads from GitHub data/content.json.
+
+CARD-SPECIFIC EDITOR CHECK
+--------------------------
+Command: Browser open http://127.0.0.1:4173/, click work-grid card 2, press Enter on work-grid card 3
+Literal output: click -> dialog=1; activeTab=作品; selected=02 / 星光品牌设计; projectEditors=6; Enter -> selected=03 / 插画设计系列; console errors=0
+Exit status: 0
+Result: every work-grid card has data-project-index, tabindex=0, role=button, pointer click, and Enter/Space keyboard handlers; each opens the matching project editor.

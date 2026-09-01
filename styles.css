@@ -126,11 +126,24 @@ svg { width: 1.1rem; height: 1.1rem; stroke-width: 1.8; }
 }
 .filter-button.is-active { border-color: var(--primary); background: var(--primary); color: white; }
 .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 28px; }
-.work-card { grid-column: span 4; min-width: 0; }
+.work-card { grid-column: span 4; min-width: 0; cursor: pointer; outline: 0; }
 .work-card:nth-child(5n + 1), .work-card:nth-child(5n + 2) { grid-column: span 6; }
 .work-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--surface); }
 .work-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
 .work-card:hover img { transform: scale(1.025); }
+.work-card:focus-visible .work-media { outline: 3px solid var(--primary); outline-offset: 4px; }
+.work-card::after {
+  content: "点击编辑";
+  display: block;
+  margin-top: 10px;
+  color: var(--primary);
+  font-size: .7rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .2s, transform .2s;
+}
+.work-card:hover::after, .work-card:focus-visible::after { opacity: 1; transform: translateY(0); }
 .work-index {
   position: absolute;
   right: 12px;
@@ -266,6 +279,7 @@ footer {
 .editor-section-toolbar { margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .editor-section-toolbar p { margin: 0; font-weight: 600; }
 .project-editor { padding: 16px; border: 1px solid var(--line); background: white; }
+.project-editor.is-selected { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(128,90,213,.12); }
 .project-editor + .project-editor { margin-top: 14px; }
 .project-editor-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .project-editor-head strong { font-size: .85rem; }

@@ -9,7 +9,8 @@ const state = {
   content: null,
   draft: null,
   filter: "全部作品",
-  uploads: new Map()
+  uploads: new Map(),
+  selectedProjectIndex: null
 };
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -65,11 +66,11 @@ function render(content = state.content) {
 }
 
 function renderProjects(content = state.content) {
-  const projects = state.filter === "全部作品"
-    ? content.projects
-    : content.projects.filter(project => project.category === state.filter);
-  $("#work-grid").innerHTML = projects.length ? projects.map((project, index) => `
-    <article class="work-card">
+  const projects = content.projects
+    .map((project, originalIndex) => ({ project, originalIndex }))
+    .filter(({ project }) => state.filter === "全部作品" || project.category === state.filter);
+  $("#work-grid").innerHTML = projects.length ? projects.map(({ project, originalIndex }, index) => `
+    <article class="work-card" data-project-index="${originalIndex}" tabindex="0" role="button" aria-label="编辑 ${html(project.title)}">
       <div class="work-media">
         <img src="${html(project.image)}" alt="${html(project.title)}" loading="lazy">
         <span class="work-index">${String(index + 1).padStart(2, "0")}</span>
@@ -128,18 +129,30 @@ function renderProjectEditors() {
 }
 
 function openEditor() {
+  openEditorForProject(null);
+}
+
+function openEditorForProject(projectIndex) {
   state.draft = deepCopy(state.content);
   state.uploads.clear();
+  state.selectedProjectIndex = Number.isInteger(projectIndex) ? projectIndex : null;
   populateEditor();
   $("#github-token").value = sessionStorage.getItem("portfolioGithubToken") || "";
   $("#editor-shell").hidden = false;
   document.body.classList.add("editor-open");
+  switchTab(state.selectedProjectIndex === null ? "basic" : "works");
+  if (state.selectedProjectIndex !== null) {
+    const selected = $(`.project-editor[data-project="${state.selectedProjectIndex}"]`);
+    selected?.scrollIntoView({ block: "nearest" });
+    selected?.classList.add("is-selected");
+  }
   $("#edit-close").focus();
 }
 
 function closeEditor() {
   $("#editor-shell").hidden = true;
   document.body.classList.remove("editor-open");
+  state.selectedProjectIndex = null;
   render(state.content);
   $("#edit-open").focus();
 }
@@ -313,6 +326,16 @@ function bindEvents() {
     render(state.content);
   });
   $("#edit-open").addEventListener("click", openEditor);
+  $("#work-grid").addEventListener("click", event => {
+    const card = event.target.closest(".work-card[data-project-index]");
+    if (card) openEditorForProject(Number(card.dataset.projectIndex));
+  });
+  $("#work-grid").addEventListener("keydown", event => {
+    const card = event.target.closest(".work-card[data-project-index]");
+    if (!card || !["Enter", " "].includes(event.key)) return;
+    event.preventDefault();
+    openEditorForProject(Number(card.dataset.projectIndex));
+  });
   $("#edit-close").addEventListener("click", closeEditor);
   $("#editor-scrim").addEventListener("click", closeEditor);
   document.addEventListener("keydown", event => {
