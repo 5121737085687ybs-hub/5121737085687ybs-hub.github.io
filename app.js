@@ -70,7 +70,7 @@ function renderProjects(content = state.content) {
     .map((project, originalIndex) => ({ project, originalIndex }))
     .filter(({ project }) => state.filter === "全部作品" || project.category === state.filter);
   $("#work-grid").innerHTML = projects.length ? projects.map(({ project, originalIndex }, index) => `
-    <article class="work-card" data-project-index="${originalIndex}" tabindex="0" role="button" aria-label="编辑 ${html(project.title)}">
+    <article class="work-card" data-project-index="${originalIndex}" tabindex="0" role="link" aria-label="查看并编辑 ${html(project.title)}">
       <div class="work-media">
         <img src="${html(project.image)}" alt="${html(project.title)}" loading="lazy">
         <span class="work-index">${String(index + 1).padStart(2, "0")}</span>
@@ -129,23 +129,14 @@ function renderProjectEditors() {
 }
 
 function openEditor() {
-  openEditorForProject(null);
-}
-
-function openEditorForProject(projectIndex) {
   state.draft = deepCopy(state.content);
   state.uploads.clear();
-  state.selectedProjectIndex = Number.isInteger(projectIndex) ? projectIndex : null;
+  state.selectedProjectIndex = null;
   populateEditor();
   $("#github-token").value = sessionStorage.getItem("portfolioGithubToken") || "";
   $("#editor-shell").hidden = false;
   document.body.classList.add("editor-open");
-  switchTab(state.selectedProjectIndex === null ? "basic" : "works");
-  if (state.selectedProjectIndex !== null) {
-    const selected = $(`.project-editor[data-project="${state.selectedProjectIndex}"]`);
-    selected?.scrollIntoView({ block: "nearest" });
-    selected?.classList.add("is-selected");
-  }
+  switchTab("basic");
   $("#edit-close").focus();
 }
 
@@ -328,13 +319,13 @@ function bindEvents() {
   $("#edit-open").addEventListener("click", openEditor);
   $("#work-grid").addEventListener("click", event => {
     const card = event.target.closest(".work-card[data-project-index]");
-    if (card) openEditorForProject(Number(card.dataset.projectIndex));
+    if (card) window.location.href = `project.html?project=${encodeURIComponent(card.dataset.projectIndex)}`;
   });
   $("#work-grid").addEventListener("keydown", event => {
     const card = event.target.closest(".work-card[data-project-index]");
     if (!card || !["Enter", " "].includes(event.key)) return;
     event.preventDefault();
-    openEditorForProject(Number(card.dataset.projectIndex));
+    window.location.href = `project.html?project=${encodeURIComponent(card.dataset.projectIndex)}`;
   });
   $("#edit-close").addEventListener("click", closeEditor);
   $("#editor-scrim").addEventListener("click", closeEditor);

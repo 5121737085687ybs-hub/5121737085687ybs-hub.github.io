@@ -25,6 +25,9 @@ if (mode === "baseline") {
 assert(existsSync(join(root, "data/content.json")), "missing content data");
 assert(existsSync(join(root, "styles.css")), "missing stylesheet");
 assert(existsSync(join(root, "app.js")), "missing application script");
+assert(existsSync(join(root, "project.html")), "missing project detail page");
+assert(existsSync(join(root, "project.js")), "missing project detail script");
+assert(existsSync(join(root, "project.css")), "missing project detail stylesheet");
 
 const app = read("app.js");
 const styles = read("styles.css");
@@ -39,7 +42,11 @@ assert(app.includes("data-project-file"), "missing project image upload");
 assert(app.includes('contentPath: "data/content.json"'), "wrong GitHub content branch");
 assert(app.includes('assets/uploads/'), "missing GitHub image upload branch");
 assert(app.includes('method: "PUT"'), "missing GitHub persistence request");
-assert(app.includes('openEditorForProject'), "missing card-specific editor action");
+assert(app.includes("project.html?project="), "cards must navigate to project detail pages");
+assert(read("project.js").includes("putFile"), "project detail page missing persistence");
+assert(read("project.html").includes('id="detail-editor"'), "project detail page missing editor panel");
+assert(read("project.html").includes('id="detail-body-input"'), "project detail page missing editable body");
+assert(read("project.html").includes('id="detail-image-input"'), "project detail page missing image input");
 assert(styles.includes(".work-card:focus-visible"), "missing keyboard focus state for cards");
 assert(!/ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}/.test(`${index}\n${app}\n${styles}\n${JSON.stringify(content)}`), "repository contains a GitHub token");
 assert(Array.isArray(content.projects) && content.projects.length >= 1, "portfolio needs at least one project");
