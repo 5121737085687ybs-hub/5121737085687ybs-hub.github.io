@@ -63,40 +63,10 @@
   },
   "projects": [
     {
-      "title": "智慧城市 App 设计",
-      "category": "UI/UX",
-      "description": "基于用户研究的城市服务应用界面设计，提供便捷的城市生活体验。",
-      "image": "assets/uploads/1788250952377-1.png"
-    },
-    {
-      "title": "星光品牌设计",
-      "category": "品牌设计",
-      "description": "新锐科技公司的品牌视觉识别系统，覆盖标志、配色与应用规范。",
-      "image": "assets/uploads/1788250956132-2.png"
-    },
-    {
-      "title": "插画设计系列",
-      "category": "插画设计",
-      "description": "以几何图形为基础的商业插画系列，应用于产品包装与品牌传播。",
-      "image": "assets/uploads/1788250959300-3.png"
-    },
-    {
-      "title": "数据可视化设计",
-      "category": "UI/UX",
-      "description": "企业级数据分析平台界面设计，让复杂信息更直观、更容易行动。",
-      "image": "assets/uploads/1788250962827-4.png"
-    },
-    {
-      "title": "电商平台设计",
-      "category": "UI/UX",
-      "description": "面向年轻用户的时尚电商平台，兼顾品牌表达与购物流程效率。",
-      "image": "assets/uploads/1788250965507-5.png"
-    },
-    {
-      "title": "社交应用设计",
-      "category": "UI/UX",
-      "description": "专注年轻群体的社交产品界面，强调自然互动与轻量表达。",
-      "image": "assets/uploads/1788250968411-6.png"
+      "title": "新项目",
+      "category": "全部",
+      "description": "项目简介",
+      "image": "assets/uploads/1788251236030-1.png"
     }
   ],
   "contact": {
