@@ -63,40 +63,10 @@
   },
   "projects": [
     {
-      "title": "智慧城市 App 设计",
-      "category": "UI/UX",
-      "description": "基于用户研究的城市服务应用界面设计，提供便捷的城市生活体验。",
-      "image": "https://mastergo.com/ai/api/search-image?query=modern%20minimalist%20mobile%20app%20interface%20design%20with%20purple%20and%20blue%20color%20scheme%2C%20clean%20layout%2C%20professional%20UI%20design&width=800&height=600&orientation=landscape&flag=fce76353abadf3108be11a706df220a5"
-    },
-    {
-      "title": "星光品牌设计",
-      "category": "品牌设计",
-      "description": "新锐科技公司的品牌视觉识别系统，覆盖标志、配色与应用规范。",
-      "image": "https://mastergo.com/ai/api/search-image?query=elegant%20brand%20identity%20design%20with%20minimalist%20logo%20and%20typography%2C%20purple%20and%20blue%20color%20palette%2C%20professional%20branding&width=800&height=600&orientation=landscape&flag=21e36ce5b64fe393ab0eb4c2db9d6f8b"
-    },
-    {
-      "title": "插画设计系列",
-      "category": "插画设计",
-      "description": "以几何图形为基础的商业插画系列，应用于产品包装与品牌传播。",
-      "image": "https://mastergo.com/ai/api/search-image?query=modern%20illustration%20design%20with%20geometric%20shapes%20and%20gradients%2C%20purple%20and%20blue%20theme%2C%20minimalist%20style&width=800&height=600&orientation=landscape&flag=8d1b31f171267d9aefb3c35e904f9c46"
-    },
-    {
-      "title": "数据可视化设计",
-      "category": "UI/UX",
-      "description": "企业级数据分析平台界面设计，让复杂信息更直观、更容易行动。",
-      "image": "https://mastergo.com/ai/api/search-image?query=clean%20and%20modern%20dashboard%20interface%20design%2C%20data%20visualization%2C%20purple%20and%20blue%20theme%2C%20professional%20UI&width=800&height=600&orientation=landscape&flag=13dda12a9909c9613cc666603630a922"
-    },
-    {
-      "title": "电商平台设计",
-      "category": "UI/UX",
-      "description": "面向年轻用户的时尚电商平台，兼顾品牌表达与购物流程效率。",
-      "image": "https://mastergo.com/ai/api/search-image?query=modern%20e-commerce%20website%20design%2C%20clean%20layout%2C%20purple%20and%20blue%20accents%2C%20professional%20UI%20design&width=800&height=600&orientation=landscape&flag=0cde088cb345d4343c82239763fad329"
-    },
-    {
-      "title": "社交应用设计",
-      "category": "UI/UX",
-      "description": "专注年轻群体的社交产品界面，强调自然互动与轻量表达。",
-      "image": "https://mastergo.com/ai/api/search-image?query=minimal%20and%20elegant%20social%20media%20app%20interface%2C%20purple%20and%20blue%20design%20elements%2C%20modern%20UI&width=800&height=600&orientation=landscape&flag=284fea9fc239e0de073e17d8e69a6dcd"
+      "title": "新项目",
+      "category": "全部",
+      "description": "项目简介",
+      "image": "assets/uploads/1788251236030-1.png"
     }
   ],
   "contact": {
