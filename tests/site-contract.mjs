@@ -43,6 +43,7 @@ assert(app.includes('contentPath: "data/content.json"'), "wrong GitHub content b
 assert(app.includes('assets/uploads/'), "missing GitHub image upload branch");
 assert(app.includes('method: "PUT"'), "missing GitHub persistence request");
 assert(app.includes("project.html?project="), "cards must navigate to project detail pages");
+assert(app.includes("projects[index].media[0]"), "homepage cover upload must sync project media");
 assert(read("project.js").includes("putFile"), "project detail page missing persistence");
 assert(read("project.html").includes('id="detail-editor"'), "project detail page missing editor panel");
 assert(read("project.html").includes('id="detail-body-input"'), "project detail page missing editable body");

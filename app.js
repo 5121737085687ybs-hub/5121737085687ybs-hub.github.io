@@ -347,7 +347,12 @@ function bindEvents() {
   $("#projects-editor").addEventListener("change", event => {
     if (!event.target.matches("[data-project-file]")) return;
     const index = Number(event.target.closest("[data-project]").dataset.project);
-    queueImage(event.target.files[0], `project-${index}`, url => { state.draft.projects[index].image = url; });
+    queueImage(event.target.files[0], `project-${index}`, url => {
+      state.draft.projects[index].image = url;
+      if (Array.isArray(state.draft.projects[index].media) && state.draft.projects[index].media.length) {
+        state.draft.projects[index].media[0] = { ...state.draft.projects[index].media[0], type: "image", src: url };
+      }
+    });
   });
   $("#token-toggle").addEventListener("click", () => {
     const input = $("#github-token");
