@@ -1,6 +1,6 @@
 {
   "site": {
-    "logo": "搞钱实验室",
+    "logo": "小白课堂",
     "footer": "实用工具分享"
   },
   "hero": {
@@ -63,9 +63,9 @@
   },
   "projects": [
     {
-      "title": " Bybit Card 完整攻略",
+      "title": "新项目",
       "category": "全部",
-      "description": " Bybit Card 完整攻略",
+      "description": "项目简介",
       "image": "assets/uploads/1788251236030-1.png"
     }
   ],
