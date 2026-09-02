@@ -4,8 +4,8 @@
     "footer": "实用工具分享"
   },
   "hero": {
-    "eyebrow": "搞钱",
-    "title": "实用工具分享",
+    "eyebrow": "",
+    "title": "小白课堂",
     "subtitle": "实用工具分享"
   },
   "capabilities": [
@@ -63,10 +63,10 @@
   },
   "projects": [
     {
-      "title": "免费订阅Codex教程",
-      "category": "Bybit",
+      "title": "新项目",
+      "category": "全部",
       "description": "项目简介",
-      "image": "assets/uploads/1788349097890-1.png"
+      "image": "assets/uploads/1788251236030-1.png"
     }
   ],
   "contact": {
