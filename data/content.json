@@ -57,7 +57,7 @@
       "category": "Bybit",
       "description": "这张卡2级订阅100%返现，所以是免费",
       "image": "assets/uploads/1788349516435-1.png",
-      "detail": "我的邀请链接：https://www.bybit.com/zh-TW/invite?ref=NPN4KO8\n\n我的邀请码：NPN4KO8",
+      "detail": "我的邀请链接：https://www.bybit.com/zh-TW/invite?ref=NPN4KO8\n\n我的邀请码：NPN4KO8\n\n通过欧易交易所充值https://www.topqwxrvknf.com/join/93682824",
       "media": [
         {
           "type": "image",
@@ -73,14 +73,19 @@
           "type": "video",
           "src": "assets/uploads/1788443403805-project-0-2.mp4",
           "alt": "2.mp4"
+        },
+        {
+          "type": "video",
+          "src": "assets/uploads/1788444423930-project-0-3.mp4",
+          "alt": "教程2.mp4"
         }
       ]
     }
   ],
   "contact": {
-    "heading": "一起创造价值",
-    "email": "5121737085687ybs@gmail.com",
-    "phone": "1388888888",
-    "address": "12 Main St Unit #2069"
+    "heading": "一起创造有价值的体验。",
+    "email": "design.contact@gmail.com",
+    "phone": "+86 138 8888 8888",
+    "address": "浙江省杭州市西湖区文三路"
   }
 }
