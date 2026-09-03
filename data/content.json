@@ -48,8 +48,12 @@
     "intro": "",
     "detail": "",
     "image": "https://mastergo.com/ai/api/search-image?query=confident%20young%20asian%20female%20designer%20in%20modern%20office%20environment%2C%20professional%20headshot%2C%20natural%20lighting%2C%20soft%20purple%20background&width=800&height=1000&orientation=portrait&flag=3e7cd1b09824770d338403a9c1d21f4f",
-    "skills": [],
-    "tools": []
+    "skills": [
+      "实用教程"
+    ],
+    "tools": [
+      "开源工具"
+    ]
   },
   "projects": [
     {
